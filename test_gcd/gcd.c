@@ -35,7 +35,7 @@ int main()
 
 	  DATA_LOAD_L22TCDM ();
 
-	  printf("Data loading is completed\n");
+	  printf("Data loading is completed\n\n");
        
 	  printf("Context is loading from L2 to GCM\n");
 
@@ -48,10 +48,10 @@ int main()
 
 	  cycles_loadcontext = get_time();
        
-	  printf("Context loading is completed \t @ %d cycles\n", cycles_loadcontext);
+	  printf("Context loading is completed \t @ %d cycles\n\n", cycles_loadcontext);
 
     
-	  printf("IPA execution is getting started\n");
+	  printf("IPA execution started\n");
 
 	  reset_timer();
 	  start_timer();
@@ -60,7 +60,7 @@ int main()
 	  cycles_execute = get_time();
        
 	  printf("IPA Execution completed \t @ %d cycles \n", cycles_execute);
-	  printf("IPA context load + IPA Execution completed \t @ %d cycles \n", cycles_loadcontext + cycles_execute);
+	  printf("IPA context load + IPA Execution completed \t @ %d cycles \n\n", cycles_loadcontext + cycles_execute);
 	}
 
       if(test_result)
@@ -68,13 +68,13 @@ int main()
 
       if(cpu_execute)
 	{
-	  printf("CPU execution is getting started...\n");
+	  printf("CPU execution started\n");
 	  reset_timer();
 	  start_timer();
 	  CPU_RUN();
 	  stop_timer();
 	  cycles_execute = get_time();
-	  printf("IPA Execution completed \t @ %d cycles \n", cycles_execute);
+	  printf("CPU Execution completed \t @ %d cycles \n", cycles_execute);
 	  reset_timer();
 	}
      
@@ -146,7 +146,7 @@ int IPA_TEST()
 	 }
 	 x+=4;
   }
-   printf("Execution succeded with %d error(s)\n", error);
+   printf("Execution succeded with %d error(s)\n\n", error);
    return error;
 }
 
